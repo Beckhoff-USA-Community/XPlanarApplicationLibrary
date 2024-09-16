@@ -1,0 +1,1686 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="index.html">
+      
+      
+        <link rel="next" href="functionblocks.html">
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.34">
+    
+    
+      
+        <title>Interfaces - XPlanarApplication</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.35f28582.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Arial:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Arial";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/style.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#interfaces" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="XPlanarApplication" class="md-header__button md-logo" aria-label="XPlanarApplication" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            XPlanarApplication
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Interfaces
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Beckhoff-USA-Community/XPlanarApplicationLibrary" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    XPlanarApplicationLibrary
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="index.html" class="md-tabs__link">
+        
+  
+    
+  
+  Overview
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="interfaces.html" class="md-tabs__link">
+        
+  
+    
+  
+  Interfaces
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="functionblocks.html" class="md-tabs__link">
+        
+  
+    
+  
+  Function Blocks
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="globals.html" class="md-tabs__link">
+        
+  
+    
+  
+  Globals/Parameters
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="changelog.html" class="md-tabs__link">
+        
+  
+    
+  
+  Changelog
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="XPlanarApplication" class="md-nav__button md-logo" aria-label="XPlanarApplication" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    XPlanarApplication
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Beckhoff-USA-Community/XPlanarApplicationLibrary" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    XPlanarApplicationLibrary
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Interfaces
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="interfaces.html" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Interfaces
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#i_planartaskresult" class="md-nav__link">
+    <span class="md-ellipsis">
+      I_PlanarTaskResult
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="I_PlanarTaskResult">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      Properties
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#i_xplanarmover" class="md-nav__link">
+    <span class="md-ellipsis">
+      I_XPlanarMover
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="I_XPlanarMover">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#properties_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Properties
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Methods
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#i_movecommands" class="md-nav__link">
+    <span class="md-ellipsis">
+      I_MoveCommands
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#i_movedynamics" class="md-nav__link">
+    <span class="md-ellipsis">
+      I_MoveDynamics
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="I_MoveDynamics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#properties_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Properties
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#i_xplanarstation" class="md-nav__link">
+    <span class="md-ellipsis">
+      I_XPlanarStation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="I_XPlanarStation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#properties_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Properties
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#methods_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Methods
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#i_xplanartrack" class="md-nav__link">
+    <span class="md-ellipsis">
+      I_XPlanarTrack
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="I_XPlanarTrack">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#properties_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Properties
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#methods_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Methods
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#i_xplanarpart" class="md-nav__link">
+    <span class="md-ellipsis">
+      I_XPlanarPart
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="I_XPlanarPart">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#properties_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Properties
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#methods_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Methods
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#i_xplanartile" class="md-nav__link">
+    <span class="md-ellipsis">
+      I_XPlanarTile
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#properties_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Properties
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="functionblocks.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Function Blocks
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="globals.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Globals/Parameters
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="changelog.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Changelog
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#i_planartaskresult" class="md-nav__link">
+    <span class="md-ellipsis">
+      I_PlanarTaskResult
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="I_PlanarTaskResult">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      Properties
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#i_xplanarmover" class="md-nav__link">
+    <span class="md-ellipsis">
+      I_XPlanarMover
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="I_XPlanarMover">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#properties_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Properties
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Methods
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#i_movecommands" class="md-nav__link">
+    <span class="md-ellipsis">
+      I_MoveCommands
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#i_movedynamics" class="md-nav__link">
+    <span class="md-ellipsis">
+      I_MoveDynamics
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="I_MoveDynamics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#properties_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Properties
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#i_xplanarstation" class="md-nav__link">
+    <span class="md-ellipsis">
+      I_XPlanarStation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="I_XPlanarStation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#properties_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Properties
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#methods_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Methods
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#i_xplanartrack" class="md-nav__link">
+    <span class="md-ellipsis">
+      I_XPlanarTrack
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="I_XPlanarTrack">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#properties_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Properties
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#methods_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Methods
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#i_xplanarpart" class="md-nav__link">
+    <span class="md-ellipsis">
+      I_XPlanarPart
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="I_XPlanarPart">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#properties_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Properties
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#methods_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Methods
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#i_xplanartile" class="md-nav__link">
+    <span class="md-ellipsis">
+      I_XPlanarTile
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#properties_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Properties
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="interfaces">Interfaces</h1>
+<h2 id="i_planartaskresult">I_PlanarTaskResult</h2>
+<p>Definition of the XPlanar Task (Command) Feedback Class </p>
+<h3 id="properties">Properties</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Property</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Access</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Aborted</td>
+<td>BOOL</td>
+<td>R</td>
+<td>Command was aborted by the Xplanar System</td>
+</tr>
+<tr>
+<td>BlockingObjectInfo</td>
+<td>REFERENCE TO PlanarObjectInfo</td>
+<td>R</td>
+<td>Object information returned if command was blocked by another planar object</td>
+</tr>
+<tr>
+<td>Busy</td>
+<td>BOOL</td>
+<td>R</td>
+<td>Command is active</td>
+</tr>
+<tr>
+<td>Done</td>
+<td>BOOL</td>
+<td>R</td>
+<td>Command was complented</td>
+</tr>
+<tr>
+<td>Error</td>
+<td>BOOL</td>
+<td>R</td>
+<td>Command returned an error</td>
+</tr>
+<tr>
+<td>ErrorID</td>
+<td>UDINT</td>
+<td>R</td>
+<td>Identification value of the error returned by the command</td>
+</tr>
+</tbody>
+</table>
+<h2 id="i_xplanarmover">I_XPlanarMover</h2>
+<p>Defines required functionality for an XPlanar mover.</p>
+<h3 id="properties_1">Properties</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Property</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Access</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ActualPosition</td>
+<td>MoverVector</td>
+<td>R</td>
+<td>Current mover position.</td>
+</tr>
+<tr>
+<td>CommandLog</td>
+<td>REFERENCE TO ARRAY</td>
+<td>R</td>
+<td>Log of commands recently sent to the mover.</td>
+</tr>
+<tr>
+<td>Destination</td>
+<td>I_XPlanarStation</td>
+<td>RW</td>
+<td>Interface pointer for the next station the mover is going to.</td>
+</tr>
+<tr>
+<td>Error</td>
+<td>BOOL</td>
+<td>R</td>
+<td>Error signal from Move Commands</td>
+</tr>
+<tr>
+<td>ErrorID</td>
+<td>UDINT</td>
+<td>R</td>
+<td>Error ID returned from Command Feedback</td>
+</tr>
+<tr>
+<td>Gap</td>
+<td>LREAL</td>
+<td>RW</td>
+<td>Collision Avoidance Gap value used for On Track movements.</td>
+</tr>
+<tr>
+<td>IdentifiedBTN</td>
+<td>STRING</td>
+<td>RO</td>
+<td>Reported BTN from ID Bumper</td>
+</tr>
+<tr>
+<td>InStation</td>
+<td>BOOL</td>
+<td>RW</td>
+<td>Signal indicating mover is in a station queue</td>
+</tr>
+<tr>
+<td>MoveCommand</td>
+<td>I_MoveCommands</td>
+<td>RO</td>
+<td>Interface pointer to Mover Commands</td>
+</tr>
+<tr>
+<td>Dynamics</td>
+<td>I_MoveDynamics</td>
+<td>RW</td>
+<td>Interface to Velocity, Accel, Decel, Jerk dynamics containers used by move commands</td>
+</tr>
+<tr>
+<td>MoverBTN</td>
+<td>STRING(13)</td>
+<td>R</td>
+<td>BTN that is assigned by the driver</td>
+</tr>
+<tr>
+<td>MoverIndex</td>
+<td>UDINT</td>
+<td>RW</td>
+<td>Index number of the mover</td>
+</tr>
+<tr>
+<td>MoverType</td>
+<td>MoverType</td>
+<td>RO</td>
+<td>Identified Mover Type from TcCOM Object</td>
+</tr>
+<tr>
+<td>pm</td>
+<td>REFERENCE TO MC_PLanarMover_</td>
+<td>R</td>
+<td>Reference to base planar motion functions</td>
+</tr>
+<tr>
+<td>RotateDynamics</td>
+<td>ST_MoveDynamics</td>
+<td>RW</td>
+<td>Sturcture of dynamic vars. Velocity, Accel, Decel, Jerk used by Rotation commands</td>
+</tr>
+<tr>
+<td>Status</td>
+<td>REFERENCE TO CDT_MCTOPLC_PLANAR_MOVER_STD_</td>
+<td>R</td>
+<td>Reference to current operating status structure of the mover</td>
+</tr>
+<tr>
+<td>Utility</td>
+<td>I_TcIoXPlanarMover</td>
+<td>RO</td>
+<td>Interface to Mover TcIo Driver functions</td>
+</tr>
+</tbody>
+</table>
+<h3 id="methods">Methods</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Method</strong></th>
+<th><strong>Return Type</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AddToGroup</td>
+<td>I_PlanarTaskResult</td>
+<td>Adds mover to the XPlanar Group</td>
+</tr>
+<tr>
+<td>Disable</td>
+<td>I_PlanarTaskResult</td>
+<td>Disables the mover</td>
+</tr>
+<tr>
+<td>Enable</td>
+<td>I_PlanarTaskResult</td>
+<td>Enables the mover</td>
+</tr>
+<tr>
+<td>Halt</td>
+<td>I_PlanarTaskResult</td>
+<td>Halts the mover</td>
+</tr>
+<tr>
+<td>Reset</td>
+<td>I_PlanarTaskResult</td>
+<td>Resets the mover</td>
+</tr>
+</tbody>
+</table>
+<h2 id="i_movecommands">I_MoveCommands</h2>
+<p>Built in Mover functions that can be easily called from the application.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Method</strong></th>
+<th><strong>Return Type</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FreeMove</td>
+<td>I_PlanarTaskResult</td>
+<td>Command the mover to an XY position on the table.</td>
+</tr>
+<tr>
+<td>JoinTrack</td>
+<td>I_PlanarTaskResult</td>
+<td>Join the mover to a specified Track Segment</td>
+</tr>
+<tr>
+<td>LeaveTrack</td>
+<td>I_PlanarTaskResult</td>
+<td>Command mover to un-join its current track segment and move to a specified xy position</td>
+</tr>
+<tr>
+<td>Rotate</td>
+<td>I_PlanarTaskResult</td>
+<td>Rotate the mover a specified modulo C position and number of additional turns.</td>
+</tr>
+<tr>
+<td>SendToStation</td>
+<td>I_PlanarTaskResult</td>
+<td>Send the mover to a desired Station</td>
+</tr>
+<tr>
+<td>SquareUp</td>
+<td>I_PlanarTaskResult</td>
+<td>Rotate the mover to its nearest quarter angle and Zero the A and B Axis</td>
+</tr>
+<tr>
+<td>TiltA</td>
+<td>I_PlanarTaskResult</td>
+<td>Tilt the mover on the A Axis</td>
+</tr>
+<tr>
+<td>TiltB</td>
+<td>I_PlanarTaskResult</td>
+<td>Tilt the mover on the B Axis</td>
+</tr>
+<tr>
+<td>TrackMove</td>
+<td>I_PlanarTaskResult</td>
+<td>Command the mover to a specified linear position on a track segment.</td>
+</tr>
+<tr>
+<td>TrackMoveXY</td>
+<td>I_PlanarTaskResult</td>
+<td>Command the mover to a specified XY position on a track segment.</td>
+</tr>
+<tr>
+<td>VerticalMove</td>
+<td>I_PlanarTaskResult</td>
+<td>Raise or lower the mover on the Z Axis</td>
+</tr>
+</tbody>
+</table>
+<h2 id="i_movedynamics">I_MoveDynamics</h2>
+<p>Interface to Mover Dynamic Constraints</p>
+<h3 id="properties_2">Properties</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Property</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Access</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Movement</td>
+<td>REFERENCE TO ST_MoveDynamics</td>
+<td>RW</td>
+<td>Sturcture of dynamic vars. Velocity, Accel, Decel, Jerk used by XYZ based move commands</td>
+</tr>
+<tr>
+<td>Rotation</td>
+<td>REFERENCE TO ST_MoveDynamics</td>
+<td>RW</td>
+<td>Sturcture of dynamic vars. Velocity, Accel, Decel, Jerk used by C Axis based rotate commands</td>
+</tr>
+<tr>
+<td>Tilt</td>
+<td>REFERENCE TO ST_MoveDynamics</td>
+<td>RW</td>
+<td>Sturcture of dynamic vars. Velocity, Accel, Decel, Jerk used by AB Axis based tilt commands</td>
+</tr>
+</tbody>
+</table>
+<h2 id="i_xplanarstation">I_XPlanarStation</h2>
+<p>Defines a specified area of a track where a mover is going to be processed.</p>
+<h3 id="properties_3">Properties</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Property</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Access</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AllowQueing</td>
+<td>BOOL</td>
+<td>W</td>
+<td>Set to FALSE the sending station will not release mover until this station is clear</td>
+</tr>
+<tr>
+<td>CanReleaseMover</td>
+<td>BOOL</td>
+<td>W</td>
+<td>Set to FALSE if Immediate area around the station is blocked, do not release mover</td>
+</tr>
+<tr>
+<td>CurrentMover</td>
+<td>I_XPlanarMover</td>
+<td>R</td>
+<td>Interface pointer to the lead mover in the stations mover queue</td>
+</tr>
+<tr>
+<td>HasMover</td>
+<td>BOOL</td>
+<td>BOOL</td>
+<td>A Mover is currently in the defined station area</td>
+</tr>
+<tr>
+<td>ID</td>
+<td>UDINT</td>
+<td>RW</td>
+<td>Index number of the station</td>
+</tr>
+<tr>
+<td>MoverQueue</td>
+<td>Reference To FB_MoverQueue_</td>
+<td>R</td>
+<td>Reference to the movers currently queued up in the station</td>
+</tr>
+<tr>
+<td>NextStation</td>
+<td>I_XPlanarStation</td>
+<td>RW</td>
+<td>Interface pointer to the next station to send the mover to</td>
+</tr>
+<tr>
+<td>NumMoversRequired</td>
+<td>UDINT</td>
+<td>RW</td>
+<td>Number of movers required by the station before station is ready to process.</td>
+</tr>
+<tr>
+<td>Positon</td>
+<td>REFERENCE TO PositionXYC</td>
+<td>R</td>
+<td>Reference to the postition of the station on the XPlanar table</td>
+</tr>
+<tr>
+<td>Size</td>
+<td>REFERENCE TO Position2D_LREAL_</td>
+<td>RW</td>
+<td>Configured station size in X and Y</td>
+</tr>
+<tr>
+<td>StationComplete</td>
+<td>BOOL</td>
+<td>W</td>
+<td>Bit for an external process to tell the station that processing is complete and release the mover to the next station</td>
+</tr>
+<tr>
+<td>StationReady</td>
+<td>BOOL</td>
+<td>R</td>
+<td>Mover(s) are registered in the station and ready to command</td>
+</tr>
+<tr>
+<td>StationType</td>
+<td>E_StationType(UDINT)</td>
+<td>RW</td>
+<td>Type of function the station is being setup to do.</td>
+</tr>
+<tr>
+<td>TrackID</td>
+<td>I_XPlanarTrack</td>
+<td>RW</td>
+<td>Interface pointer to the track segment the station resides on. (do not set if not using tracks)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="methods_1">Methods</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Method</strong></th>
+<th><strong>Return Type</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Execute</td>
+<td>null</td>
+<td>'Automatic' function of the station.  Watch for a mover to arrive, execute a process if assigned, and send the mover away</td>
+</tr>
+<tr>
+<td>Reset</td>
+<td>BOOL</td>
+<td>Reset the internal state machine of the station</td>
+</tr>
+</tbody>
+</table>
+<h2 id="i_xplanartrack">I_XPlanarTrack</h2>
+<p>Defines functionality of a specified track segment</p>
+<h3 id="properties_4">Properties</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Property</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Access</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Definition</td>
+<td>REFERENCE TO ST_TrackDefinition</td>
+<td>R</td>
+<td>Structure containing segment build definitions</td>
+</tr>
+<tr>
+<td>Error</td>
+<td>BOOL</td>
+<td>R</td>
+<td>Bit indicating an error occurred during the build process</td>
+</tr>
+<tr>
+<td>ErrorID</td>
+<td>UDINT</td>
+<td>R</td>
+<td>Identification number of error that occurred on the Track object</td>
+</tr>
+<tr>
+<td>Index</td>
+<td>UDINT</td>
+<td>RW</td>
+<td>Index number of the segment</td>
+</tr>
+<tr>
+<td>MoverCount</td>
+<td>UDINT</td>
+<td>R</td>
+<td>Number of movers currently on segment</td>
+</tr>
+<tr>
+<td>MovingMoverCount</td>
+<td>UDINT</td>
+<td>R</td>
+<td>Number of movers currently on segment and movers actively planned for movement on this segment</td>
+</tr>
+<tr>
+<td>pm</td>
+<td>REFERENCE TO MC_PlanarTrack</td>
+<td>R</td>
+<td>Reference to base planar motion functions</td>
+</tr>
+<tr>
+<td>Status</td>
+<td>REFERENCE TO CDT_MCTOPLC_PLANAR_TRACK</td>
+<td>R</td>
+<td>Current operating status structure of Track</td>
+</tr>
+<tr>
+<td>TrackLength</td>
+<td>UDINT</td>
+<td>R</td>
+<td>Linear length of track segment in mm</td>
+</tr>
+<tr>
+<td>Utility</td>
+<td>I_McPlanarTrack</td>
+<td>RO</td>
+<td>Interface to Track segment TcIo Driver functions</td>
+</tr>
+</tbody>
+</table>
+<h3 id="methods_2">Methods</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Method</strong></th>
+<th><strong>Return Type</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AddToGroup</td>
+<td>I_PlanarTaskResult</td>
+<td>Add the track segment to the XPlanar Group</td>
+</tr>
+<tr>
+<td>AppendLine</td>
+<td>I_PlanarTaskResult</td>
+<td>Append a line item to the track segment</td>
+</tr>
+<tr>
+<td>AppendPoint</td>
+<td>I_PlanarTaskResult</td>
+<td>Append a point item to the track segment</td>
+</tr>
+<tr>
+<td>Build</td>
+<td>I_PlanarTaskResult</td>
+<td>Build the track segment according to Definition configuration</td>
+</tr>
+<tr>
+<td>Clear</td>
+<td>I_PlanarTaskResult</td>
+<td>Clears all defined points from the track segment</td>
+</tr>
+<tr>
+<td>CloseLoop</td>
+<td>I_PlanarTaskResult</td>
+<td>Closes loop to the first defined track point</td>
+</tr>
+<tr>
+<td>Reset</td>
+<td>BOOL</td>
+<td>Reset the internal state machine of the station</td>
+</tr>
+<tr>
+<td>Disable</td>
+<td>I_PlanarTaskResult</td>
+<td>Disables the track segment</td>
+</tr>
+<tr>
+<td>Enable</td>
+<td>I_PlanarTaskResult</td>
+<td>Enables the track segment</td>
+</tr>
+<tr>
+<td>GetTrackPositionAt</td>
+<td>LREAL</td>
+<td>Calculates closest linear track point for a given XY coordinate</td>
+</tr>
+<tr>
+<td>Reset</td>
+<td>I_PlanarTaskResult</td>
+<td>Resets the track segment</td>
+</tr>
+</tbody>
+</table>
+<h2 id="i_xplanarpart">I_XPlanarPart</h2>
+<p>Defines functionality of the XPlanar Part Object</p>
+<h3 id="properties_5">Properties</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Property</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Access</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ObjectID</td>
+<td>OTCID</td>
+<td>R</td>
+<td>Object ID of the XPlanar Part MC3 Object</td>
+</tr>
+<tr>
+<td>pm</td>
+<td>REFERENCE TO MC_PlanarPart</td>
+<td>R</td>
+<td>Reference to base planar motion functions</td>
+</tr>
+<tr>
+<td>State</td>
+<td>REFERENCE TO MC_PlanarState</td>
+<td>R</td>
+<td>Current State of the XPlanar Part</td>
+</tr>
+</tbody>
+</table>
+<h3 id="methods_3">Methods</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Method</strong></th>
+<th><strong>Return Type</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ForceDisable</td>
+<td>I_PlanarTaskResult</td>
+<td>Disables Xplanar part</td>
+</tr>
+<tr>
+<td>SetAllowEnable</td>
+<td>I_PlanarTaskResult</td>
+<td>Allows the XPlanar Part to be enabled by the Xplanar TcCom</td>
+</tr>
+<tr>
+<td>Reset</td>
+<td>I_PlanarTaskResult</td>
+<td>Resets the XPlanar Part</td>
+</tr>
+</tbody>
+</table>
+<h2 id="i_xplanartile">I_XPlanarTile</h2>
+<p>Defines functionality of the XPlanar Tile Object</p>
+<h2 id="properties_6">Properties</h2>
+<table>
+<thead>
+<tr>
+<th><strong>Property</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Access</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Btn</td>
+<td>STRING(13)</td>
+<td>R</td>
+<td>Btn number of the tile.</td>
+</tr>
+<tr>
+<td>DcLinkOk</td>
+<td>BOOL</td>
+<td>R</td>
+<td>Tile power is OK.</td>
+</tr>
+<tr>
+<td>Index</td>
+<td>UINT</td>
+<td>R</td>
+<td>Index of tile in array.</td>
+</tr>
+<tr>
+<td>PartIndex</td>
+<td>UINT</td>
+<td>Index of XPlanar Part Tile is configured in.</td>
+<td></td>
+</tr>
+<tr>
+<td>PositionOnPart</td>
+<td>REFERENCE TO ST_TcIoTilePositionOnPart</td>
+<td>R</td>
+<td>Position of tile origin point in the XPlanar Part configuration</td>
+</tr>
+<tr>
+<td>Temperatures</td>
+<td>REFERENTE TO ST_TileTemperatures</td>
+<td>R</td>
+<td>Last read temperature of center and each tile quadrant (North, South, East, West)</td>
+</tr>
+<tr>
+<td>TimeToShutdown</td>
+<td>UDINT</td>
+<td>R</td>
+<td>Last read time in milliseconds to tile shutdown based on temperature</td>
+</tr>
+<tr>
+<td>Utility</td>
+<td>I_TcIoXPlanarTile</td>
+<td>Interface to Tile TcIo Driver functions</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.tabs"], "search": "assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="assets/javascripts/bundle.56dfad97.min.js"></script>
+      
+    
+  </body>
+</html>
