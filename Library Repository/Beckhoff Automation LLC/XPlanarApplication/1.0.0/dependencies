@@ -1,0 +1,10 @@
+#SPT Base Types
+#SPT Event Logger
+#Tc2_Math
+#Tc2_Standard
+#Tc2_System
+#Tc2_Utilities
+#Tc3_EventLogger
+#Tc3_Mc3PlanarMotion
+#Tc3_Physics
+Tc3_XPlanarUtility, * (Beckhoff Automation GmbH)
