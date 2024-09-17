@@ -20,4 +20,4 @@ The following components must be installed to use this library:
 - [TE1000 TwinCAT 3 Engineering](https://www.beckhoff.com/en-en/products/automation/twincat/te1xxx-twincat-3-engineering/te1000.html) version 3.1.4024.0 or higher
 - [TF5890 TwinCAT 3 XPlanar](https://www.beckhoff.com/en-us/products/motion/xplanar-planar-motor-system/xplanar-software/tf5890.html)
 - [TF5430 TwinCAT 3 Advanced Motion Pack](https://www.beckhoff.com/en-us/products/motion/xplanar-planar-motor-system/xplanar-software/tf5430.html)
-- [SPT Base Types library] (https://github.com/Beckhoff-USA-Community/SPT-Libraries) - Also included in the 'Supporting Libraries' folder of this repository.
+- [SPT Base Types library](https://github.com/Beckhoff-USA-Community/SPT-Libraries) - Also included in the 'Supporting Items' folder of this repository.
