@@ -1,7 +1,11 @@
 # XPlanar Application Library
 This library is built on the base functionality provided by TF5890 and its main goal to provide a consistent and flexible jumping off point for using XPlanar in applications.  
 
-## ***NOTE : Use version 1.2 and above is designed for TF5890 v4.2! For TF5890 v4.1 and earlier use version 1.0!***
+## ***NOTE : See below for version compatability***
+TF5890 version	|	XPlanarApplication	|	TwinCAT build 
+v4.1.x			|	v1.0 				|	Tc4024 Only
+v4.2.x			|	v1.2 				|	Tc4024 / Tc4026
+v4.4.x			|	v1.4 				|	Tc4026 Only
 
 This library is created by [Beckhoff Automation LLC.](https://www.beckhoff.com/en-us/), and is provided as-is under the MIT license.
 
