@@ -1,0 +1,88 @@
+================================================================================
+TwinCAT Package Builder - Quick Reference
+================================================================================
+
+DIRECTORY STRUCTURE
+-------------------
+tcpkg/
+├── packages/           # Add your package directories here
+├── release/            # Built .nupkg files output here
+└── scripts/            # Build scripts (YOU ARE HERE)
+
+LOCATION
+--------
+Script: C:\GitHub\EventVideoPlayback\tcpkg\scripts\Build-TcPackages.ps1
+Packages: C:\GitHub\EventVideoPlayback\tcpkg\packages\
+Output: C:\GitHub\EventVideoPlayback\tcpkg\release\
+
+BASIC COMMANDS (run from scripts/ directory)
+---------------------------------------------
+# Standard build (incremental)
+.\Build-TcPackages.ps1
+
+# Clean build (removes release folder first)
+.\Build-TcPackages.ps1 -CleanBuild
+
+# Verbose output
+.\Build-TcPackages.ps1 -Verbose
+
+# Custom output folder
+.\Build-TcPackages.ps1 -BuildFolder "C:\CustomPath"
+
+# Combine options
+.\Build-TcPackages.ps1 -CleanBuild -Verbose
+
+WHAT IT DOES
+------------
+1. Checks for tcpkg tool
+2. Scans packages/ directory for all .nuspec files
+3. Creates release folder at tcpkg root if needed
+4. Runs "tcpkg pack <file>.nuspec" for each package
+5. Moves all .nupkg files to ../release folder
+6. Generates ../release/checksums.md with SHA256 checksums
+7. Shows build summary
+
+ADDING NEW PACKAGES
+-------------------
+1. Create directory in tcpkg/packages/
+2. Add your .nuspec file and source files
+3. Run the build script - it will automatically detect it!
+
+PACKAGES DISCOVERED
+-------------------
+- EventVideoPlayback.Documentation
+- EventVideoPlayback.Library
+- EventVideoPlayback.Service
+- EventVideoPlayback.XAE.Workload
+- EventVideoPlayback.XAR.Workload
+- EventVision.HMI
+
+EXIT CODES
+----------
+0 = Success (all packages built)
+1 = Failure (one or more packages failed)
+
+PREREQUISITES
+-------------
+- TwinCAT tcpkg tool must be in PATH
+- PowerShell 5.1 or higher
+- Write permissions to tcpkg directory
+
+TROUBLESHOOTING
+---------------
+Error: "tcpkg not found"
+  -> Add tcpkg.exe location to system PATH
+
+Error: "Package build failed"
+  -> Check console output for specific package errors
+  -> Verify .nuspec file syntax
+  -> Ensure all referenced files exist
+
+Error: "Execution policy"
+  -> Run: Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+
+MORE INFO
+---------
+See BUILD_INSTRUCTIONS.md for complete documentation
+
+================================================================================

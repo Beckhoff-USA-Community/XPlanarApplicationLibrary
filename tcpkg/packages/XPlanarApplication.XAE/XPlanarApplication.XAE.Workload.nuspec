@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>Beckhoff-USA-Community.XPlanarApplication.XAE</id>
+    <version>2.0.0</version>
+    <title>XPlanar Application Library</title>
+    <authors>Beckhoff Automation LLC</authors>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+	<licenseUrl>https://packages.beckhoff-usa-community.com/assets/XPlanarApplication.XAE/LICENSE.txt</licenseUrl>
+	<iconUrl>https://packages.beckhoff-usa-community.com/assets/XPlanarApplication.XAE/icon.png</iconUrl>
+    <projectUrl>https://github.com/Beckhoff-USA-Community/XPlanarApplicationLibrary</projectUrl>
+    <description>
+      This workload contains the XPlanar Application PLC library for easier deployment of XPlanar projects.
+    </description>
+    <copyright>(c) Beckhoff Automation LLC</copyright>
+    <tags>Beckhoff TwinCAT Workload CategoryBeckhoff&#160;USA&#160;Community&#160;&#124;&#160;XPlanar VariantXAE</tags>
+    <packageTypes>
+      <packageType name="Workload" />
+    </packageTypes>
+    <dependencies>
+      <dependency id="Beckhoff-USA-Community.XAE.PLC.Lib.XPlanarApplication" version="2.0.0" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>

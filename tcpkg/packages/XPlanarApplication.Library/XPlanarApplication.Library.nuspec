@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>Beckhoff-USA-Community.XAE.PLC.Lib.XPlanarApplication</id>
+    <version>2.0.0</version>
+    <title>XPlanar Application PLC Library</title>
+    <authors>Beckhoff Automation LLC</authors>
+    <projectUrl>https://github.com/Beckhoff-USA-Community/XPlanarApplicationLibrary</projectUrl>
+    <copyright>(c) Beckhoff Automation LLC</copyright>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+	<licenseUrl>https://packages.beckhoff-usa-community.com/assets/XPlanarApplication.Library/LICENSE.txt</licenseUrl>
+	<iconUrl>https://packages.beckhoff-usa-community.com/assets/XPlanarApplication.Library/icon.png</iconUrl>
+    <summary>PLC library for XPlanar Applications</summary>
+    <tags>Beckhoff TwinCAT AllowMultipleVersions</tags>
+    <releaseNotes>Version 2.0</releaseNotes>
+    <description>XPlanar Application PLC Library - A modular XPlanar control component function block with minimal overhead built on the Planar Motion.</description>
+    <dependencies>
+		<dependency id="TF5400.AdvancedMotionPack.XAE" version="0.0.0" />
+		<dependency id="TF5890.XPlanar.XAE" version="0.0.0" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+    <file src="bin\**" target="tools" />
+  </files>
+</package>

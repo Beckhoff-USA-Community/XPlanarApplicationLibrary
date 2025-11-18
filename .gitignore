@@ -284,3 +284,8 @@ paket-files/
 __pycache__/
 *.pyc
 Library Repository/cache
+
+
+!tcpkg/**
+/tcpkg/packages/XPlanarApplication.Library/bin
+/tcpkg/release
