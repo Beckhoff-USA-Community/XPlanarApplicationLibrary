@@ -5,6 +5,8 @@ A modular XPlanar control component function block with minimal overhead built o
 The library splits into an overview and four subsystem diagrams. Full member tables with descriptions and access levels are on the [Function Blocks](./functionblocks.md) and [Interfaces](./interfaces.md) pages.
 
 ### Overview
+The ip block is the global variable list from the Globals page. It holds arrays of mover, station, and track interfaces for use within the application.
+
 ```mermaid
 classDiagram
     direction TB
@@ -44,11 +46,11 @@ classDiagram
     ip --> I_XPlanarMover : Movers
     ip --> I_XPlanarStation : Stations
     ip --> I_XPlanarTrack : Tracks
-
-    note for ip "Global variable list from the Globals page. Arrays of mover, station, and track interfaces for use within the application."
 ```
 
 ### Component
+Call CyclicLogic() on FB_Component_XPlanar every PLC cycle. It cycles each mover, station, and track object and updates their statuses.
+
 ```mermaid
 classDiagram
     direction TB
@@ -84,8 +86,6 @@ classDiagram
     FB_Component_XPlanar ..> FB_XPlanarMover : calls CyclicLogic()
     FB_Component_XPlanar ..> FB_XPlanarStation : calls CyclicLogic()
     FB_Component_XPlanar ..> FB_XPlanarTrackSegment : calls CyclicLogic()
-
-    note for FB_Component_XPlanar "Call CyclicLogic() every PLC cycle. It cycles each mover, station, and track object and updates their statuses."
 ```
 
 ### Mover
@@ -164,6 +164,8 @@ classDiagram
 ```
 
 ### Station
+As movers pass through a station, HasMover sets. If a mover enters the station and stops, StationReady sets.
+
 ```mermaid
 classDiagram
     direction TB
@@ -214,11 +216,11 @@ classDiagram
     I_XPlanarStation --> I_XPlanarStation : NextStation
     I_XPlanarMover o-- I_XPlanarStation : Destination
     FB_MoverQueue --> I_XPlanarMover : FirstMover, LastMover
-
-    note for FB_XPlanarStation "As movers pass through, HasMover sets. If a mover enters the station and stops, StationReady sets."
 ```
 
 ### Track Segment
+Build() checks the point configuration and initializes the segment with its linked NC group.
+
 ```mermaid
 classDiagram
     direction TB
@@ -250,6 +252,4 @@ classDiagram
     }
 
     I_XPlanarTrack <|.. FB_XPlanarTrackSegment
-
-    note for FB_XPlanarTrackSegment "Build() checks the point configuration and initializes the segment with its linked NC group."
 ```
