@@ -99,4 +99,14 @@ jobs:
         shell: pwsh
         env:
           NUGET_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: dotnet nuget push package-output/*.nupkg --api-key $env:NUGET_AUTH_TOKEN --source https://nuget.pkg.github.com/Beckhoff-USA-Community/index.json
+        run: |
+          # Wildcard paths with forward slashes fail on Windows in dotnet nuget push,
+          # so the packages are enumerated and pushed by full path instead
+          $packages = @(Get-ChildItem 'package-output' -Filter '*.nupkg' -File)
+          if ($packages.Count -ne 2) {
+            throw "Expected two packages in package-output but found $($packages.Count). Check the pack step log."
+          }
+          foreach ($package in $packages) {
+            dotnet nuget push $package.FullName --api-key $env:NUGET_AUTH_TOKEN --source https://nuget.pkg.github.com/Beckhoff-USA-Community/index.json
+            if ($LASTEXITCODE -ne 0) { throw "Pushing $($package.Name) failed." }
+          }
