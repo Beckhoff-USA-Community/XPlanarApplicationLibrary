@@ -1,0 +1,35 @@
+/* Beckhoff USA Community documentation theme.
+   The shared look for community project sites: a near black header,
+   the community red for links and accents, Inter for text and
+   Consolas for code. To reuse this look on another project, copy this
+   file and the theme section of mkdocs.yml. */
+
+:root {
+  --md-primary-fg-color: #1a1a1a;
+  --md-primary-fg-color--light: #424242;
+  --md-primary-fg-color--dark: #000000;
+  --md-accent-fg-color: #d32f2f;
+  --md-accent-fg-color--transparent: rgba(211, 47, 47, 0.1);
+  --md-typeset-a-color: #d32f2f;
+}
+
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color: #1a1a1a;
+  --md-primary-fg-color--light: #424242;
+  --md-primary-fg-color--dark: #000000;
+  --md-accent-fg-color: #ff5252;
+  --md-accent-fg-color--transparent: rgba(255, 82, 82, 0.1);
+  --md-typeset-a-color: #ff5252;
+}
+
+/* Code keeps the classic fixed width look of the community sites */
+.md-typeset code,
+.md-typeset pre,
+.md-typeset kbd {
+  font-family: Consolas, Monaco, "Courier New", monospace;
+}
+
+/* Softly rounded code blocks, matching the community site styling */
+.md-typeset pre > code {
+  border-radius: 0.4rem;
+}

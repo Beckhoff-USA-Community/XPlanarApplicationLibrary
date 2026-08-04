@@ -283,9 +283,9 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
-Library Repository/cache
 
+# TwinCAT package pack output
+/package-output/
 
-!tcpkg/**
-/tcpkg/packages/XPlanarApplication.Library/bin
-/tcpkg/release
+# MkDocs build output
+/site/

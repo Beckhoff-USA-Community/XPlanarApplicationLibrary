@@ -1,0 +1,102 @@
+name: release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  release:
+    runs-on: windows-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v5
+
+      - name: Check the tag against the repository
+        shell: pwsh
+        env:
+          TAG_NAME: ${{ github.ref_name }}
+        run: |
+          $tagVersion = $env:TAG_NAME -replace '^v', ''
+          $libraryPath = 'packaging/XPlanarApplication.Library/library/XPlanarApplication.library'
+
+          # The .library file is a zip archive and its projectinformations.auxiliary
+          # entry carries the version XAE stamped into the library, so the tag is
+          # checked against the library file itself, not only the packaging text files
+          Add-Type -AssemblyName System.IO.Compression.FileSystem
+          $zip = [System.IO.Compression.ZipFile]::OpenRead((Resolve-Path $libraryPath))
+          try {
+            $entry = $zip.GetEntry('projectinformations.auxiliary')
+            if (-not $entry) {
+              throw "$libraryPath has no projectinformations.auxiliary entry, so it does not look like a library file exported by XAE. Save the library file again from XAE."
+            }
+            $reader = New-Object System.IO.StreamReader($entry.Open())
+            $information = $reader.ReadToEnd()
+            $reader.Dispose()
+          }
+          finally {
+            $zip.Dispose()
+          }
+          $libraryVersions = @([regex]::Matches($information, '<Version>([^<]+)</Version>') | ForEach-Object { $_.Groups[1].Value } | Sort-Object -Unique)
+          if ($libraryVersions.Count -ne 1) {
+            throw "Expected exactly one version inside $libraryPath but found: $($libraryVersions -join ', '). Save the library file again from XAE."
+          }
+          if ($libraryVersions[0] -ne $tagVersion) {
+            throw "The tag is v$tagVersion but the committed library file carries version $($libraryVersions[0]). Save the new library version over $libraryPath, or tag the version the file actually carries."
+          }
+
+          [xml]$library = Get-Content 'packaging/XPlanarApplication.Library/XPlanarApplication.Library.nuspec'
+          [xml]$workload = Get-Content 'packaging/XPlanarApplication.XAE/XPlanarApplication.XAE.Workload.nuspec'
+          if ($library.package.metadata.id -ne 'Beckhoff-USA-Community.XAE.PLC.Lib.XPlanarApplication') {
+            throw "The library nuspec id is $($library.package.metadata.id) but the workload pins Beckhoff-USA-Community.XAE.PLC.Lib.XPlanarApplication. Keep the two ids and this workflow in step."
+          }
+          if ($workload.package.metadata.id -ne 'Beckhoff-USA-Community.XPlanarApplication.XAE') {
+            throw "The workload nuspec id is $($workload.package.metadata.id) but this workflow releases Beckhoff-USA-Community.XPlanarApplication.XAE. Keep the id and this workflow in step."
+          }
+          $libraryPin = ($workload.package.metadata.dependencies.dependency | Where-Object { $_.id -eq 'Beckhoff-USA-Community.XAE.PLC.Lib.XPlanarApplication' }).version
+          $versions = @(
+            @{ Name = 'library nuspec version'; Value = $library.package.metadata.version },
+            @{ Name = 'workload nuspec version'; Value = $workload.package.metadata.version },
+            @{ Name = 'workload dependency pin on the library'; Value = $libraryPin }
+          )
+          foreach ($entry in $versions) {
+            if ($entry.Value -ne $tagVersion) {
+              throw "The $($entry.Name) says $($entry.Value) but the tag is v$tagVersion. Replace every occurrence of $($entry.Value) under packaging with $tagVersion before tagging."
+            }
+          }
+
+          # The two library tool scripts carry the version once each
+          foreach ($script in 'chocolateyinstall.ps1', 'chocolateyuninstall.ps1') {
+            $path = "packaging/XPlanarApplication.Library/tools/$script"
+            if ((Get-Content $path -Raw) -notmatch [regex]::Escape("`$libraryVersion = '$tagVersion'")) {
+              throw "$path does not set `$libraryVersion = '$tagVersion'. Replace the old version in the script before tagging."
+            }
+          }
+
+      - name: Pack the packages
+        shell: pwsh
+        run: |
+          $nuspecs = @(
+            'packaging/XPlanarApplication.Library/XPlanarApplication.Library.nuspec',
+            'packaging/XPlanarApplication.XAE/XPlanarApplication.XAE.Workload.nuspec'
+          )
+          foreach ($nuspec in $nuspecs) {
+            nuget pack $nuspec -OutputDirectory package-output -NoPackageAnalysis
+            if ($LASTEXITCODE -ne 0) { throw "Packing $nuspec failed." }
+          }
+
+      - name: Upload the packages as a build artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: twincat-packages
+          path: package-output/*.nupkg
+
+      - name: Push to GitHub Packages
+        shell: pwsh
+        env:
+          NUGET_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: dotnet nuget push package-output/*.nupkg --api-key $env:NUGET_AUTH_TOKEN --source https://nuget.pkg.github.com/Beckhoff-USA-Community/index.json

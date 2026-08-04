@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>Beckhoff-USA-Community.XPlanarApplication.XAE</id>
+    <version>2.0.7.1</version>
+    <title>XPlanar Application</title>
+    <authors>Beckhoff Automation LLC</authors>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <license type="file">LICENSE.txt</license>
+    <readme>docs/README.md</readme>
+    <projectUrl>https://github.com/Beckhoff-USA-Community/XPlanarApplicationLibrary</projectUrl>
+    <description>This workload sets up an engineering system for the XPlanar Application Library. It installs the XPlanarApplication PLC library into the XAE library repository, ready to add as a reference. TF5890 TwinCAT 3 XPlanar and TF5400 TwinCAT 3 Advanced Motion Pack are required to build a project that uses the library.</description>
+    <copyright>(c) Beckhoff Automation LLC</copyright>
+    <tags>Beckhoff TwinCAT Workload CategoryBeckhoff&#160;USA&#160;Community&#160;&#124;&#160;XPlanar VariantXAE</tags>
+    <packageTypes>
+      <packageType name="Workload" />
+    </packageTypes>
+    <dependencies>
+      <dependency id="Beckhoff-USA-Community.XAE.PLC.Lib.XPlanarApplication" version="2.0.7.1" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+    <file src="docs\README.md" target="docs\README.md" />
+    <file src="LICENSE.txt" target="LICENSE.txt" />
+  </files>
+</package>

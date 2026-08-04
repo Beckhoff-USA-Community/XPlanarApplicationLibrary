@@ -1,22 +1,22 @@
 # Overview
-A modular XPlanar control component function block with minimal overhead built on the Planar Motion and XPlanar Utility TF5890 libraries that can easily scale to custom and/or larger projects.  This function block can be used within the SPT framework or any other architecture.
+A modular XPlanar control component function block with minimal overhead built on the Planar Motion and XPlanar Utility TF5890 libraries that can easily scale to custom and larger projects.  This function block can be used within the SPT framework or any other architecture.
 
-# Class Diagram
-``` mermaid
+## Class Diagram
+```mermaid
 classDiagram
     I_XPlanarTrack <|.. FB_XPlanarTrackSegment
-    I_XPlanarStation <|.. FB_XPlanarStation 
-    I_XPlanarMover o--|> I_XPlanarStation
+    I_XPlanarStation <|.. FB_XPlanarStation
+    I_XPlanarMover o-- I_XPlanarStation
     I_XPlanarMover <|.. FB_XPlanarMover
     I_MoveCommands <|.. FB_XPlanarMover
     I_MoveDynamics <|.. FB_XPlanarMover
-    
+
     ip --> I_XPlanarMover
     ip --> I_XPlanarTrack
-    ip --> I_XPlanarStation  
+    ip --> I_XPlanarStation
 
     class FB_Component_XPlanar{
-      Bool Abort()
+      BOOL Abort()
       I_PlanarTaskResult AddMoversToGroup()
       I_PlanarTaskResult AddTracksToGroup()
       I_PlanarTaskResult EnableGroup()
@@ -39,14 +39,14 @@ classDiagram
       LREAL Gap
       STRING IdentifiedBTN
       BOOL InStation
-      I_MoveCommands I_MoveCommands
+      I_MoveCommands MoveCommand
       STRING MoverBTN
       UDINT MoverIndex
       MOVERTYPE MoverType
       REFERENCE_TO Tc3_MC3PlanarMotion.MC_PlanarMover pm
       REFERENCE_TO CDT_MCTOPLC_PLANAR_MOVER_STD Status
       I_TcIoXPlanarMover Utility
-      
+
       I_PlanarTaskResult AddToGroup(PlanarGroup)
       I_PlanarTaskResult Disable()
       I_PlanarTaskResult Enable()
@@ -65,14 +65,14 @@ classDiagram
       I_PlanarTaskResult TiltA(LREAL:Position)
       I_PlanarTaskResult TiltB(LREAL:Position)
       I_PlanarTaskResult TrackMove(LREAL:Position, LREAL:Gap, I_XPlanarTrack:Track, MC_DIRECTION:Direction)
-      I_PlanarTaskResult TrackMove(LREAL:XPosition, LREAL:YPosition, LREAL:Gap, I_XPlanarTrack:Track, MC_DIRECTION:Direction)
+      I_PlanarTaskResult TrackMoveXY(LREAL:XPosition, LREAL:YPosition, LREAL:Gap, I_XPlanarTrack:Track, MC_DIRECTION:Direction)
       I_PlanarTaskResult VerticalMove(LREAL:Position)
     }
 
     class I_MoveDynamics{
-      REFERENCE_TO ST_MoveDynamics : Movement
-      REFERENCE_TO ST_MoveDynamics : Rotation
-      REFERENCE_TO ST_MoveDynamics : Tilt
+      REFERENCE_TO ST_MoveDynamics Movement
+      REFERENCE_TO ST_MoveDynamics Rotation
+      REFERENCE_TO ST_MoveDynamics Tilt
     }
 
     class FB_XPlanarMover{
@@ -85,7 +85,7 @@ classDiagram
       I_XPlanarMover CurrentMover
       BOOL HasMover
       UDINT ID
-      REFERENCE_TO FB_MoverQueue
+      REFERENCE_TO FB_MoverQueue MoverQueue
       STRING Name
       I_XPlanarStation NextStation
       UDINT NumMoversRequired
@@ -95,7 +95,6 @@ classDiagram
       BOOL StationReady
       E_StationType StationType
       UDINT TrackID
-      UDINT Size
 
       Execute()
       BOOL Reset()
@@ -105,7 +104,7 @@ classDiagram
       WatchForMover()
     }
     class I_XPlanarTrack{
-      REFERENCE_TO ST_TrackDefinition ST_TrackDefinition
+      REFERENCE_TO ST_TrackDefinition Definition
       UDINT Index
       UDINT MoverCount
       UDINT MovingMoverCount
@@ -122,7 +121,7 @@ classDiagram
       I_PlanarTaskResult CloseLoop()
       I_PlanarTaskResult Disable()
       I_PlanarTaskResult Enable()
-      LREAL GetTrackPositionAt(PostionXYC:Position)
+      LREAL GetTrackPositionAt(PositionXYC:Position)
       I_PlanarTaskResult Reset()
 
     }
@@ -132,7 +131,7 @@ classDiagram
 
     class ip{
       Tracks : ARRAY[1..SystemParameters.TRACK_COUNT] of I_XPlanarTrack
-      Movers : ARRAY[1..SystemParameters.MOVER_COUNT] of I_XplanarMover
+      Movers : ARRAY[1..SystemParameters.MOVER_COUNT] of I_XPlanarMover
       Stations : ARRAY[1..SystemParameters.STATION_COUNT] of I_XPlanarStation
     }
 

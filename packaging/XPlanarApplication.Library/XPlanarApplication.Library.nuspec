@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>Beckhoff-USA-Community.XAE.PLC.Lib.XPlanarApplication</id>
+    <version>2.0.7.1</version>
+    <title>XPlanar Application PLC Library</title>
+    <authors>Beckhoff Automation LLC</authors>
+    <projectUrl>https://github.com/Beckhoff-USA-Community/XPlanarApplicationLibrary</projectUrl>
+    <copyright>(c) Beckhoff Automation LLC</copyright>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <license type="file">LICENSE.txt</license>
+    <readme>docs/README.md</readme>
+    <summary>TwinCAT PLC library for XPlanar applications</summary>
+    <tags>Beckhoff TwinCAT XAE PLC Library AllowMultipleVersions</tags>
+    <releaseNotes>https://beckhoff-usa-community.github.io/XPlanarApplicationLibrary/changelog/</releaseNotes>
+    <description>XPlanarApplication is a TwinCAT 3 PLC library built on the base functionality of TF5890 XPlanar. It provides a consistent and flexible starting point for XPlanar applications: movers, stations, tracks and tiles with queueing, motion command interfaces and station processes. The install puts the library into the XAE library repository, ready to add as a reference.</description>
+    <dependencies>
+      <dependency id="TF5400.AdvancedMotionPack.XAE" version="0.0.0" />
+      <dependency id="TF5890.XPlanar.XAE" version="0.0.0" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+    <file src="library\XPlanarApplication.library" target="tools\XPlanarApplication.library" />
+    <file src="docs\README.md" target="docs\README.md" />
+    <file src="LICENSE.txt" target="LICENSE.txt" />
+  </files>
+</package>
