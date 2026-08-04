@@ -11,7 +11,7 @@
     <projectUrl>https://github.com/Beckhoff-USA-Community/XPlanarApplicationLibrary</projectUrl>
     <description>This workload sets up an engineering system for the XPlanar Application Library. It installs the XPlanarApplication PLC library into the XAE library repository, ready to add as a reference. TF5890 TwinCAT 3 XPlanar and TF5400 TwinCAT 3 Advanced Motion Pack are required to build a project that uses the library.</description>
     <copyright>(c) Beckhoff Automation LLC</copyright>
-    <tags>Beckhoff TwinCAT Workload CategoryBeckhoff&#160;USA&#160;Community&#160;&#124;&#160;XPlanar VariantXAE</tags>
+    <tags>Beckhoff TwinCAT Workload CategoryBeckhoff&#160;USA&#160;Community VariantXAE</tags>
     <packageTypes>
       <packageType name="Workload" />
     </packageTypes>
