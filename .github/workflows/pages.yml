@@ -6,12 +6,12 @@ on:
       - main
     paths:
       - 'docs/**'
-      - 'mkdocs.yml'
+      - 'zensical.toml'
       - '.github/workflows/pages.yml'
   pull_request:
     paths:
       - 'docs/**'
-      - 'mkdocs.yml'
+      - 'zensical.toml'
       - '.github/workflows/pages.yml'
   workflow_dispatch:
 
@@ -33,11 +33,19 @@ jobs:
           python-version: '3.12'
       - name: Build the site
         run: |
-          pip install "mkdocs-material>=9"
-          mkdocs build --strict
+          pip install zensical==0.0.52
+          zensical build --clean --strict -f zensical.toml
       - name: Upload the site as a Pages artifact
         uses: actions/upload-pages-artifact@v4
         with:
+          path: site
+
+      # On a branch or pull request the built site is also attached as a
+      # plain artifact for review. Download it and open index.html locally.
+      - if: github.ref != 'refs/heads/main'
+        uses: actions/upload-artifact@v7
+        with:
+          name: site-preview
           path: site
 
   # Publishing needs GitHub Pages enabled for the repository with the

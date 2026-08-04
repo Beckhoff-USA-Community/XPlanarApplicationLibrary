@@ -1,5 +1,5 @@
 # Overview
-A modular XPlanar control component function block with minimal overhead built on the Planar Motion and XPlanar Utility TF5890 libraries that can easily scale to custom and larger projects.  This function block can be used within the SPT framework or any other architecture.
+A modular XPlanar control component function block with minimal overhead built on the Planar Motion and XPlanar Utility TF5890 libraries that can easily scale to custom and larger projects.  This function block can be used within the SPT Framework or any other architecture.
 
 ## Class Diagram
 ```mermaid

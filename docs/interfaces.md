@@ -21,13 +21,13 @@ Defines required functionality for an XPlanar mover.
 |ActualPosition|MoverVector|R|Current mover position|
 |CommandLog|REFERENCE TO ARRAY[1..MAX_LOG_COUNT] OF STRING|R|Log of commands recently sent to the mover|
 |Destination|I_XPlanarStation|RW|Interface pointer for the next station the mover is going to|
+|Dynamics|I_MoveDynamics|RW|Interface to Velocity, Accel, Decel, Jerk dynamics containers used by move commands|
 |Error|BOOL|R|Error signal from Move Commands|
 |ErrorID|UDINT|R|Error ID returned from Command Feedback|
 |Gap|LREAL|RW|Collision Avoidance Gap value used for On Track movements|
 |IdentifiedBTN|STRING|R|Reported BTN from ID Bumper|
 |InStation|BOOL|RW|Signal indicating the mover is in a station queue|
 |MoveCommand|I_MoveCommands|R|Interface pointer to Mover Commands|
-|Dynamics|I_MoveDynamics|RW|Interface to Velocity, Accel, Decel, Jerk dynamics containers used by move commands|
 |MoverBTN|STRING(13)|R|BTN that is assigned by the driver|
 |MoverIndex|UDINT|RW|Index number of the mover|
 |MoverType|MoverType|R|Identified Mover Type from the TcCOM Object|
@@ -155,7 +155,7 @@ Defines functionality of the XPlanar Tile Object
 ### Properties
 |**Property**|**Type**|**Access**|**Description**|
 |--|--|--|--|
-|Btn|STRING(13)|R|Btn number of the tile|
+|Btn|STRING(13)|R|BTN number of the tile|
 |DcLinkOk|BOOL|R|Tile power is OK. *Only if operating in Normal mode with hardware*|
 |Index|UINT|R|Index of the tile in the array|
 |PartIndex|UINT|R|Index of the XPlanar Part the tile is configured in|

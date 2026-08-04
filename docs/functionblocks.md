@@ -47,8 +47,8 @@ Function block that allows for an implementation of an XPlanar system as a compo
 |BuildTracks|BOOL|PUBLIC|Sequence for initializing all configured track segments|
 |CheckMovers|BOOL|PUBLIC|Method that can be called to check all valid movers and raise an alarm if a lost mover is detected|
 |CheckTilePower|BOOL|PUBLIC|Method that can be called to check DC Link voltage for all tiles and will raise an alarm if not ok|
-|EnableGroup|BOOL|PUBLIC|Method used to enable the XPlanar Group|
 |CyclicLogic|-|PUBLIC|Handles XPlanar object update calls and all other logic that needs to happen every cycle|
+|EnableGroup|BOOL|PUBLIC|Method used to enable the XPlanar Group|
 |EnableMovers|BOOL|PUBLIC|Method used to enable all movers with the option of adding them to the XPlanar Group|
 |EnableTracks|BOOL|PUBLIC|Method used to enable all track segments with the option of adding them to the XPlanar Group|
 |IdentifyMovers|BOOL|PUBLIC|Method used to identify and sort movers based on the assigned ID Bumper|

@@ -1,0 +1,66 @@
+[project]
+site_name = "XPlanar Application Library"
+site_description = "A TwinCAT PLC library that provides a consistent and flexible starting point for XPlanar applications"
+site_url = "https://beckhoff-usa-community.github.io/XPlanarApplicationLibrary/"
+repo_url = "https://github.com/Beckhoff-USA-Community/XPlanarApplicationLibrary"
+extra_css = ["stylesheets/extra.css"]
+nav = [
+  { "Overview" = "index.md" },
+  { "Installation" = "installation.md" },
+  { "Function Blocks" = "functionblocks.md" },
+  { "Interfaces" = "interfaces.md" },
+  { "Globals" = "globals.md" },
+  { "Changelog" = "changelog.md" },
+  { "Releasing" = "releasing.md" },
+]
+
+[project.theme]
+variant = "classic"
+font.text = "Inter"
+features = [
+  "navigation.tabs",
+  "navigation.tabs.sticky",
+  "navigation.top",
+  "navigation.footer",
+  "search.highlight",
+  "content.code.copy",
+]
+
+[[project.theme.palette]]
+media = "(prefers-color-scheme: light)"
+scheme = "default"
+primary = "custom"
+accent = "custom"
+toggle.icon = "lucide/sun"
+toggle.name = "Switch to dark mode"
+
+[[project.theme.palette]]
+media = "(prefers-color-scheme: dark)"
+scheme = "slate"
+primary = "custom"
+accent = "custom"
+toggle.icon = "lucide/moon"
+toggle.name = "Switch to light mode"
+
+[project.markdown_extensions.admonition]
+
+[project.markdown_extensions.attr_list]
+
+[project.markdown_extensions.def_list]
+
+[project.markdown_extensions.footnotes]
+
+[project.markdown_extensions.md_in_html]
+
+[project.markdown_extensions.tables]
+
+[project.markdown_extensions.toc]
+
+[project.markdown_extensions.pymdownx.highlight]
+
+[project.markdown_extensions.pymdownx.inlinehilite]
+
+[project.markdown_extensions.pymdownx.superfences]
+custom_fences = [
+  { name = "mermaid", class = "mermaid", format = "pymdownx.superfences.fence_code_format" },
+]
