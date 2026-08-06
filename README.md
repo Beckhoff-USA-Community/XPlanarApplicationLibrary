@@ -23,7 +23,7 @@ The following must be installed to build a project that uses the library:
 
 ## Installation
 
-The library ships as a TwinCAT package on the GitHub package feed of the Beckhoff USA Community organization. GitHub requires a login for its package feeds, even for public packages, so create a personal access token of the classic type with the read:packages scope in your GitHub account, then from an administrator PowerShell:
+The library ships as a TwinCAT package on the GitHub package feed of the Beckhoff USA Community organization. From an administrator PowerShell, entering your GitHub personal access token when it prompts for a password:
 
 ```powershell
 tcpkg config unset -n VerifySignatures
@@ -31,7 +31,7 @@ tcpkg source add -n "Beckhoff-USA-Community" -s https://nuget.pkg.github.com/Bec
 tcpkg install Beckhoff-USA-Community.XPlanarApplication.XAE -y
 ```
 
-Community packages are not signed by Beckhoff, so signature verification must be off before the feed is added, and `--take 100` is required because GitHub caps search results below what the package manager asks for by default. The [installation page](https://beckhoff-usa-community.github.io/XPlanarApplicationLibrary/installation/) of the documentation walks through every step, including updating and uninstalling.
+The first two commands set up the feed and are only needed once per machine. [Adding the package feed](https://github.com/Beckhoff-USA-Community/BAUS_Community_General_Assets/blob/main/feed-setup.md) walks through creating the token, explains why both are required and why the order matters, and covers the common failures. The [installation page](https://beckhoff-usa-community.github.io/XPlanarApplicationLibrary/installation/) of the documentation covers this library specifically, including updating and uninstalling.
 
 The old community package feed on packages.beckhoff-usa-community.com is retired.
 
