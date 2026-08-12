@@ -1,10 +1,25 @@
 # XPlanar Application Library
 
-A TwinCAT 3 PLC library built on the base functionality of TF5890 XPlanar. Its main goal is to provide a consistent and flexible jumping off point for using XPlanar in applications: movers, stations, tracks and tiles with queueing, motion command interfaces and station processes.
+A TwinCAT 3 PLC library built on the base functionality of TF5890 XPlanar and TF5400 Advanced Motion. Its main goal is to provide a consistent and flexible jumping off point for using XPlanar in applications: movers, stations, tracks and tiles with queueing, motion command interfaces and station processes.
 
-**Version 2.0 is not a direct compatibility upgrade.** See the [Version 2.0 release notes](https://github.com/Beckhoff-USA-Community/XPlanarApplicationLibrary/wiki/Version-2.0-release-notes) for potential breaking changes.
+## Installation  **NEW**
+
+The library ships as a TwinCAT package on the GitHub package feed of the Beckhoff USA Community organization. From an administrator PowerShell, entering your GitHub personal access token when it prompts for a password:
+
+```powershell
+tcpkg config unset -n VerifySignatures
+tcpkg source add -n "Beckhoff-USA-Community" -s https://nuget.pkg.github.com/Beckhoff-USA-Community/index.json -u <your GitHub user name> --take 100
+tcpkg install Beckhoff-USA-Community.XPlanarApplication.XAE -y
+```
+
+The first two commands set up the feed and are only needed once per machine. [Adding the package feed](https://github.com/Beckhoff-USA-Community/BAUS_Community_General_Assets/blob/main/feed-setup.md) walks through creating the token, explains why both are required and why the order matters, and covers the common failures. The [installation page](https://beckhoff-usa-community.github.io/XPlanarApplicationLibrary/installation/) of the documentation covers this library specifically, including updating and uninstalling.
+
+The old community package feed on packages.beckhoff-usa-community.com is retired.
+
 
 ## Version compatibility
+
+**Version 2.0 is not a direct compatibility upgrade.** See the [Version 2.0 release notes](https://github.com/Beckhoff-USA-Community/XPlanarApplicationLibrary/wiki/Version-2.0-release-notes) for potential breaking changes.
 
 | TF5890 | Library | TwinCAT | Notes |
 |--|--|--|--|
@@ -20,20 +35,6 @@ The following must be installed to build a project that uses the library:
 * TE1000 TwinCAT 3 Engineering
 * TF5890 TwinCAT 3 XPlanar
 * TF5400 TwinCAT 3 Advanced Motion Pack
-
-## Installation
-
-The library ships as a TwinCAT package on the GitHub package feed of the Beckhoff USA Community organization. From an administrator PowerShell, entering your GitHub personal access token when it prompts for a password:
-
-```powershell
-tcpkg config unset -n VerifySignatures
-tcpkg source add -n "Beckhoff-USA-Community" -s https://nuget.pkg.github.com/Beckhoff-USA-Community/index.json -u <your GitHub user name> --take 100
-tcpkg install Beckhoff-USA-Community.XPlanarApplication.XAE -y
-```
-
-The first two commands set up the feed and are only needed once per machine. [Adding the package feed](https://github.com/Beckhoff-USA-Community/BAUS_Community_General_Assets/blob/main/feed-setup.md) walks through creating the token, explains why both are required and why the order matters, and covers the common failures. The [installation page](https://beckhoff-usa-community.github.io/XPlanarApplicationLibrary/installation/) of the documentation covers this library specifically, including updating and uninstalling.
-
-The old community package feed on packages.beckhoff-usa-community.com is retired.
 
 ## Documentation
 
